@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dhaval Chavda — Senior Technical Project Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ── RESET & ROOT ──────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0f2346;
+  --navy2:#1a3a6b;
+  --teal:#0e6b55;
+  --teal2:#12876b;
+  --gold:#d4a843;
+  --gold2:#f0c060;
+  --ink:#1a1f2e;
+  --mid:#445568;
+  --dim:#6b7a8d;
+  --pale:#f0f4f8;
+  --white:#ffffff;
+  --card:#ffffff;
+  --border:#dde3ea;
+  --ff-display:'DM Serif Display',serif;
+  --ff-body:'DM Sans',sans-serif;
+  --ff-mono:'JetBrains Mono',monospace;
+  --shadow:0 2px 20px rgba(15,35,70,.08);
+  --shadow-lg:0 8px 40px rgba(15,35,70,.14);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);color:var(--ink);background:#f7f9fc;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+
+/* ── SCROLLBAR ──────────────────────────────────────────────── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#f0f4f8}
+::-webkit-scrollbar-thumb{background:var(--navy2);border-radius:4px}
+
+/* ── HERO ──────────────────────────────────────────────────── */
+.hero{
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 55%,#1d5a8a 100%);
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(212,168,67,.15) 0%,transparent 70%);
+  top:-100px;right:-100px;pointer-events:none;
+}
+
+/* ── NAV ────────────────────────────────────────────────────── */
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.5rem 6%;position:relative;z-index:10;
+}
+.nav-logo{
+  font-family:var(--ff-mono);font-size:.85rem;
+  color:var(--gold2);letter-spacing:.15em;text-transform:uppercase;
+}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{
+  font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.7);transition:color .2s;font-weight:500;
+}
+.nav-links a:hover{color:var(--gold2)}
+
+/* ── HERO BODY ──────────────────────────────────────────────── */
+.hero-body{
+  display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  padding:0 6% 4rem;position:relative;z-index:10;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.3);
+  color:var(--gold2);font-family:var(--ff-mono);font-size:.78rem;
+  padding:.4rem 1rem;border-radius:2rem;letter-spacing:.1em;
+  margin-bottom:1.8rem;
+  animation:fadeUp .6s ease both;
+}
+.hero-tag span{width:8px;height:8px;border-radius:50%;background:var(--gold2);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-name{
+  font-family:var(--ff-display);
+  font-size:clamp(3rem,7vw,5.5rem);
+  color:var(--white);line-height:1.05;
+  margin-bottom:1rem;
+  animation:fadeUp .6s ease .1s both;
+}
+.hero-name em{
+  font-style:italic;
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-title{
+  font-size:clamp(1rem,2vw,1.25rem);color:rgba(255,255,255,.75);
+  font-weight:300;letter-spacing:.03em;margin-bottom:2.5rem;max-width:560px;
+  animation:fadeUp .6s ease .2s both;
+}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem;
+  animation:fadeUp .6s ease .3s both;
+}
+.hero-meta-item{
+  display:flex;align-items:center;gap:.5rem;
+  color:rgba(255,255,255,.65);font-size:.88rem;
+}
+.hero-meta-item svg{opacity:.7}
+.hero-cta{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  animation:fadeUp .6s ease .4s both;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.85rem 2rem;border-radius:.5rem;font-size:.9rem;
+  font-weight:600;letter-spacing:.03em;cursor:pointer;
+  transition:transform .2s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 100%);
+  color:var(--navy);box-shadow:0 4px 20px rgba(212,168,67,.4);
+}
+.btn-gold:hover{box-shadow:0 8px 30px rgba(212,168,67,.5)}
+.btn-outline{
+  border:1.5px solid rgba(255,255,255,.35);
+  color:rgba(255,255,255,.85);background:transparent;
+}
+.btn-outline:hover{border-color:rgba(255,255,255,.7);color:var(--white)}
+
+/* ── STATS STRIP ────────────────────────────────────────────── */
+.stats-strip{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.1);
+  position:relative;z-index:10;
+}
+.stat{
+  padding:2rem 6%;
+  border-right:1px solid rgba(255,255,255,.1);
+  animation:fadeUp .6s ease .5s both;
+}
+.stat:last-child{border-right:none}
+.stat-val{
+  font-family:var(--ff-display);font-size:2.8rem;
+  color:var(--gold2);line-height:1;margin-bottom:.25rem;
+}
+.stat-lbl{font-size:.8rem;color:rgba(255,255,255,.55);letter-spacing:.06em;text-transform:uppercase}
+
+/* ── SECTIONS ───────────────────────────────────────────────── */
+section{padding:6rem 6%}
+.section-inner{max-width:1100px;margin:0 auto}
+.sec-label{
+  font-family:var(--ff-mono);font-size:.78rem;
+  color:var(--teal2);letter-spacing:.18em;text-transform:uppercase;
+  margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem;
+}
+.sec-label::before{content:'';width:32px;height:1px;background:var(--teal2)}
+.sec-title{
+  font-family:var(--ff-display);font-size:clamp(2rem,4vw,2.8rem);
+  color:var(--navy);line-height:1.15;margin-bottom:3rem;
+}
+.sec-title em{font-style:italic;color:var(--teal)}
+
+/* ── ABOUT ──────────────────────────────────────────────────── */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.about-text p{font-size:1.05rem;color:var(--mid);margin-bottom:1rem;line-height:1.8}
+.about-text p strong{color:var(--navy)}
+.highlights-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.highlights-list li{
+  display:flex;align-items:flex-start;gap:.75rem;
+  font-size:.95rem;color:var(--mid);
+}
+.highlights-list li::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--gold);flex-shrink:0;margin-top:.55rem;
+}
+.about-card{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
+  border-radius:1.25rem;padding:2.5rem;color:var(--white);
+  position:sticky;top:2rem;
+}
+.about-card-title{font-family:var(--ff-display);font-size:1.4rem;margin-bottom:1.5rem;color:var(--gold2)}
+.contact-row{display:flex;flex-direction:column;gap:1rem}
+.contact-item{
+  display:flex;align-items:center;gap:.75rem;
+  font-size:.9rem;color:rgba(255,255,255,.75);
+  padding:.75rem;background:rgba(255,255,255,.07);
+  border-radius:.5rem;transition:background .2s;
+}
+.contact-item:hover{background:rgba(255,255,255,.12)}
+.contact-item svg{flex-shrink:0;opacity:.8}
+.cert-mini{margin-top:1.5rem}
+.cert-mini-title{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.75rem}
+.cert-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.cert-tag{
+  font-size:.75rem;padding:.3rem .75rem;border-radius:2rem;
+  background:rgba(212,168,67,.15);border:1px solid rgba(212,168,67,.25);
+  color:var(--gold2);font-weight:500;
+}
+
+/* ── SKILLS ──────────────────────────────────────────────────── */
+#skills{background:var(--pale)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.skill-card{
+  background:var(--white);border-radius:1rem;padding:1.75rem;
+  border:1px solid var(--border);
+  transition:transform .25s,box-shadow .25s;
+  animation:fadeUp .5s ease both;
+}
+.skill-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.skill-card-icon{
+  width:44px;height:44px;border-radius:.75rem;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;font-size:1.3rem;
+}
+.skill-card-title{font-weight:600;color:var(--navy);margin-bottom:.75rem;font-size:.95rem}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.skill-list li{font-size:.83rem;color:var(--dim);padding-left:.9rem;position:relative}
+.skill-list li::before{content:'›';position:absolute;left:0;color:var(--teal2);font-weight:700}
+
+/* ── DOMAIN ──────────────────────────────────────────────────── */
+#domain{background:var(--white)}
+.domain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.domain-card{
+  border-radius:.875rem;padding:1.5rem;
+  border:1px solid var(--border);background:var(--white);
+  transition:all .25s;cursor:default;
+  position:relative;overflow:hidden;
+}
+.domain-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--teal) 0%,var(--teal2) 100%);
+  transform:scaleX(0);transform-origin:left;transition:transform .3s;
+}
+.domain-card:hover::before{transform:scaleX(1)}
+.domain-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.domain-icon{font-size:1.75rem;margin-bottom:.75rem}
+.domain-name{font-weight:600;font-size:.9rem;color:var(--navy);margin-bottom:.6rem}
+.domain-items{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.domain-items li{font-size:.78rem;color:var(--dim)}
+.domain-items li::before{content:'· ';color:var(--teal)}
+
+/* ── EXPERIENCE ──────────────────────────────────────────────── */
+#experience{background:var(--pale)}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;
+  width:2px;background:linear-gradient(to bottom,var(--navy2) 0%,var(--teal) 100%);
+}
+.timeline-item{position:relative;margin-bottom:3rem}
+.timeline-dot{
+  position:absolute;left:-2.35rem;top:.3rem;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--navy2);border:3px solid var(--pale);
+  box-shadow:0 0 0 2px var(--navy2);
+}
+.timeline-dot.featured{background:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.job-card{
+  background:var(--white);border-radius:1.1rem;
+  border:1px solid var(--border);overflow:hidden;
+}
+.job-header{
+  padding:1.5rem 1.75rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
+  background:linear-gradient(to right,#fafbfc,var(--white));
+}
+.job-title-wrap{}
+.job-role{font-weight:700;font-size:1.05rem;color:var(--navy);margin-bottom:.25rem}
+.job-company{font-size:.88rem;color:var(--teal);font-weight:600}
+.job-dates{
+  font-family:var(--ff-mono);font-size:.78rem;color:var(--dim);
+  background:var(--pale);padding:.35rem .85rem;border-radius:2rem;
+  white-space:nowrap;flex-shrink:0;border:1px solid var(--border);
+}
+.job-body{padding:1.5rem 1.75rem}
+.job-body p{font-size:.92rem;color:var(--mid);margin-bottom:1rem;line-height:1.75}
+.job-bullets{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+.job-bullets li{
+  font-size:.88rem;color:var(--mid);
+  padding-left:1.25rem;position:relative;line-height:1.65;
+}
+.job-bullets li::before{
+  content:'▸';position:absolute;left:0;
+  color:var(--teal);font-size:.7rem;top:.2rem;
+}
+
+/* ── STAR BOX ────────────────────────────────────────────────── */
+.star-box{
+  border:1px solid #d0e8f5;border-radius:.875rem;
+  overflow:hidden;margin-top:1.25rem;
+}
+.star-box-title{
+  background:linear-gradient(90deg,#eaf4fb 0%,#f5f9fc 100%);
+  padding:.875rem 1.25rem;
+  font-weight:700;font-size:.88rem;color:var(--navy);
+  border-bottom:1px solid #d0e8f5;
+  display:flex;align-items:center;gap:.6rem;
+}
+.star-box-title::before{content:'★';color:var(--gold);font-size:.8rem}
+.star-rows{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #d0e8f5}
+.star-rows:last-child{border-bottom:none}
+.star-cell{padding:1rem 1.25rem;border-right:1px solid #d0e8f5}
+.star-cell:last-child{border-right:none}
+.star-letter{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:24px;height:24px;border-radius:50%;
+  font-family:var(--ff-mono);font-size:.75rem;font-weight:700;
+  margin-bottom:.5rem;
+}
+.s-s{background:#dbeafe;color:#1d4ed8}
+.s-t{background:#d1fae5;color:#065f46}
+.s-a{background:#fef3c7;color:#92400e}
+.s-r{background:#d1fae5;color:#065f46}
+.star-cell-title{font-weight:600;font-size:.8rem;color:var(--navy);margin-bottom:.4rem;letter-spacing:.04em;text-transform:uppercase}
+.star-cell p,.star-cell li{font-size:.82rem;color:var(--mid);line-height:1.65}
+.star-cell ul{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.star-cell li::before{content:'› ';color:var(--teal);font-weight:700}
+.star-cell-full{grid-column:1/-1;border-right:none}
+
+/* ── CERTIFICATIONS ──────────────────────────────────────────── */
+#certifications{background:var(--white)}
+.cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.cert-item{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.25rem;border-radius:.75rem;
+  border:1px solid var(--border);background:var(--white);
+  transition:all .2s;
+}
+.cert-item:hover{border-color:var(--teal2);background:#f5fdf9;transform:translateX(4px)}
+.cert-icon{
+  width:38px;height:38px;border-radius:.5rem;
+  background:linear-gradient(135deg,var(--teal) 0%,var(--teal2) 100%);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:1rem;
+}
+.cert-name{font-weight:600;font-size:.88rem;color:var(--navy)}
+.cert-org{font-size:.78rem;color:var(--dim);margin-top:.1rem}
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+footer{
+  background:var(--navy);padding:3rem 6%;
+  text-align:center;
+}
+.footer-inner{max-width:600px;margin:0 auto}
+.footer-name{font-family:var(--ff-display);font-size:1.6rem;color:var(--white);margin-bottom:.5rem}
+.footer-tagline{font-size:.88rem;color:rgba(255,255,255,.5);margin-bottom:2rem}
+.footer-links{display:flex;justify-content:center;gap:2rem;margin-bottom:2rem}
+.footer-links a{
+  font-size:.83rem;color:rgba(255,255,255,.6);
+  letter-spacing:.05em;transition:color .2s;
+}
+.footer-links a:hover{color:var(--gold2)}
+.footer-copy{font-size:.78rem;color:rgba(255,255,255,.3)}
+
+/* ── ANIMATIONS ──────────────────────────────────────────────── */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── MOBILE ───────────────────────────────────────────────────── */
+@media(max-width:900px){
+  .about-grid,.skills-grid{grid-template-columns:1fr}
+  .domain-grid{grid-template-columns:repeat(2,1fr)}
+  .stats-strip{grid-template-columns:repeat(2,1fr)}
+  .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .nav-links{display:none}
+  .star-rows{grid-template-columns:1fr}
+  .star-cell{border-right:none;border-bottom:1px solid #d0e8f5}
+  .cert-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .domain-grid{grid-template-columns:1fr 1fr}
+  .hero-body{padding:0 5% 3rem}
+  section{padding:4rem 5%}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ════════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <nav>
+    <div class="nav-logo">JS // Portfolio</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#domain">Domains</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certs</a>
+    </div>
+  </nav>
+
+  <div class="hero-body">
+    <div class="hero-tag">
+      <span></span> Open to Senior TPM · Program Manager · Agile Delivery Lead Roles
+    </div>
+    <h1 class="hero-name">Dhaval<br/><em>Chavda</em></h1>
+    <p class="hero-title">Senior Technical Project Manager &amp; Certified Scrum Master with 16+ years leading enterprise SaaS platforms, Agile transformations, and global engineering programs.</p>
+    <div class="hero-meta">
+      <span class="hero-meta-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        India
+      </span>
+      <span class="hero-meta-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 8 10 6 10-6"/></svg>
+        dhavalrajput74@email.com
+      </span>
+      <span class="hero-meta-item">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 17H6.5v-7H9v7zm-1.25-8a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM18 17h-2.5v-3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V17H10v-7h2.5v1.1A3.48 3.48 0 0 1 15 10c1.93 0 3 1.57 3 3.5V17z"/></svg>
+        linkedin.com/in/dhaval-chavda
+      </span>
+    </div>
+    <div class="hero-cta">
+      <a href="mailto:dhavalrajput74@email.com" class="btn btn-gold">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 8 10 6 10-6"/></svg>
+        Get In Touch
+      </a>
+      <a href="#experience" class="btn btn-outline">
+        View Experience ↓
+      </a>
+    </div>
+  </div>
+
+  <div class="stats-strip">
+    <div class="stat"><div class="stat-val">16+</div><div class="stat-lbl">Years IT/PM Experience</div></div>
+    <div class="stat"><div class="stat-val">$2.5M+</div><div class="stat-lbl">Annual Portfolio Managed</div></div>
+    <div class="stat"><div class="stat-val">30+</div><div class="stat-lbl">Global Engineers Led</div></div>
+    <div class="stat"><div class="stat-val">18%</div><div class="stat-lbl">Delivery Cost Reduction</div></div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="sec-label">Who I Am</div>
+    <h2 class="sec-title">Bridging <em>strategy</em> with<br/>technical execution</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a <strong>Senior Technical Project Manager and Certified Scrum Master</strong> with 16+ years of progressive experience delivering enterprise-scale SaaS platforms, technical programs, and Agile transformation initiatives across product-based organisations globally.</p>
+        <p>My strength lies in <strong>bridging the gap between business strategy and engineering delivery</strong> — partnering with architects, DevOps, QA, product management, and C-suite stakeholders to drive measurable outcomes across globally distributed teams spanning India, Argentina, and China.</p>
+        <p>I consistently deliver <strong>multi-million dollar portfolios on time and under budget</strong>, while building high-performing engineering cultures through Agile coaching, AI-powered tooling, and data-driven governance.</p>
+        <ul class="highlights-list">
+          <li>Improved billing accuracy by 30% via automation-driven infrastructure subscription platform</li>
+          <li>Improved document processing efficiency by 35% using AI-enabled classification workflows</li>
+          <li>Reduced sprint spillover by 25% through Agile transformation and backlog governance</li>
+          <li>Enabled $400K+ incremental revenue through SOW negotiation and delivery-led upsell</li>
+          <li>Championed AI-powered PM tools — reduced reporting overhead by ~40% across squads</li>
+        </ul>
+      </div>
+      <div class="about-card reveal">
+        <div class="about-card-title">Let's Connect</div>
+        <div class="contact-row">
+          <a href="mailto:dhavalrajput74@email.com" class="contact-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 8 10 6 10-6"/></svg>
+            dhavalrajput74@email.com
+          </a>
+          <a href="https://linkedin.com/in/dhaval-chavda" target="_blank" class="contact-item">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM9 17H6.5v-7H9v7zm-1.25-8a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM18 17h-2.5v-3.5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5V17H10v-7h2.5v1.1A3.48 3.48 0 0 1 15 10c1.93 0 3 1.57 3 3.5V17z"/></svg>
+            linkedin.com/in/dhaval-chavda
+          </a>
+          <div class="contact-item">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            India (Open to Remote)
+          </div>
+        </div>
+        <div class="cert-mini">
+          <div class="cert-mini-title">Key Certifications</div>
+          <div class="cert-tags">
+            <span class="cert-tag">CSM</span>
+            <span class="cert-tag">SAFe 6</span>
+            <span class="cert-tag">PRINCE2</span>
+            <span class="cert-tag">PMI AI</span>
+            <span class="cert-tag">Cloud 101</span>
+            <span class="cert-tag">Mgmt 3.0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ═══════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="sec-label">What I Bring</div>
+    <h2 class="sec-title">Core <em>Competencies</em></h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal" style="animation-delay:.05s">
+        <div class="skill-card-icon" style="background:#eef4ff">🗂️</div>
+        <div class="skill-card-title">Technical Program Management</div>
+        <ul class="skill-list">
+          <li>End-to-end program & portfolio delivery</li>
+          <li>Multi-squad Agile & scaled execution</li>
+          <li>Strategic roadmap planning</li>
+          <li>Risk, dependency & release management</li>
+          <li>SOW negotiation & change control</li>
+          <li>Executive stakeholder communication</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal" style="animation-delay:.1s">
+        <div class="skill-card-icon" style="background:#f0fdf4">🔄</div>
+        <div class="skill-card-title">Agile & Delivery Frameworks</div>
+        <ul class="skill-list">
+          <li>Scrum, Kanban, SAFe 5 & 6, Waterfall</li>
+          <li>Sprint planning & backlog governance</li>
+          <li>Agile coaching & transformation</li>
+          <li>Engineering throughput optimisation</li>
+          <li>KPI dashboards, OKRs & governance</li>
+          <li>Distributed team collaboration</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal" style="animation-delay:.15s">
+        <div class="skill-card-icon" style="background:#fff7ed">☁️</div>
+        <div class="skill-card-title">Technical & Cloud Knowledge</div>
+        <ul class="skill-list">
+          <li>SaaS & multi-tenant platform delivery</li>
+          <li>CI/CD pipeline & DevOps collaboration</li>
+          <li>Cloud (IaaS / PaaS / SaaS)</li>
+          <li>API & system integration management</li>
+          <li>AI-driven workflow automation</li>
+          <li>Cloud 101 certified — FinOps</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal" style="animation-delay:.2s">
+        <div class="skill-card-icon" style="background:#fdf4ff">💰</div>
+        <div class="skill-card-title">Financial & Operational Governance</div>
+        <ul class="skill-list">
+          <li>P&L ownership — $2.5M+ portfolios</li>
+          <li>Budget forecasting & cost control</li>
+          <li>Resource capacity planning & FinOps</li>
+          <li>Revenue tracking & margin optimisation</li>
+          <li>Delivery health & executive dashboards</li>
+          <li>Operational efficiency improvement</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal" style="animation-delay:.25s">
+        <div class="skill-card-icon" style="background:#f0fdf4">🤖</div>
+        <div class="skill-card-title">AI-Powered PM Tools</div>
+        <ul class="skill-list">
+          <li>ClickUp AI, Jira AI, Notion AI</li>
+          <li>ChatGPT, Copilot, Google Bard</li>
+          <li>AI workflow automation for PM ops</li>
+          <li>Prompt engineering for PMs</li>
+          <li>PMI AI for PMs — 3 modules certified</li>
+          <li>AI-enabled sprint planning & reporting</li>
+        </ul>
+      </div>
+      <div class="skill-card reveal" style="animation-delay:.3s">
+        <div class="skill-card-icon" style="background:#fff1f2">🛠️</div>
+        <div class="skill-card-title">Tools & Platforms</div>
+        <ul class="skill-list">
+          <li>Jira, Azure DevOps, Confluence, Aha!</li>
+          <li>Miro, Slack, MS Teams, Zoom</li>
+          <li>Git, Bitbucket, Jenkins, SonarQube</li>
+          <li>Selenium, Appium, SQL Server</li>
+          <li>Docker, CI/CD pipelines</li>
+          <li>Power BI, executive reporting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOMAIN ════════════════════════════════════════════════════ -->
+<section id="domain">
+  <div class="section-inner">
+    <div class="sec-label">Industry Knowledge</div>
+    <h2 class="sec-title">Domain <em>Expertise</em></h2>
+    <div class="domain-grid">
+      <div class="domain-card reveal">
+        <div class="domain-icon">📄</div>
+        <div class="domain-name">Document & Content Management</div>
+        <ul class="domain-items">
+          <li>DMS/CMS platform delivery</li>
+          <li>Document lifecycle & version control</li>
+          <li>Workflow automation</li>
+          <li>Compliance & audit trails</li>
+        </ul>
+      </div>
+      <div class="domain-card reveal">
+        <div class="domain-icon">💳</div>
+        <div class="domain-name">Subscription Billing & FinTech</div>
+        <ul class="domain-items">
+          <li>Usage-based & tiered billing</li>
+          <li>Subscription SaaS platforms</li>
+          <li>Payment & invoice automation</li>
+          <li>FinOps & revenue governance</li>
+        </ul>
+      </div>
+      <div class="domain-card reveal">
+        <div class="domain-icon">🤖</div>
+        <div class="domain-name">AI & Intelligent Automation</div>
+        <ul class="domain-items">
+          <li>AI document classification</li>
+          <li>Data extraction & indexing</li>
+          <li>GenAI PM tools adoption</li>
+          <li>Intelligent workflow automation</li>
+        </ul>
+      </div>
+      <div class="domain-card reveal">
+        <div class="domain-icon">☁️</div>
+        <div class="domain-name">Cloud & DevOps Delivery</div>
+        <ul class="domain-items">
+          <li>Cloud platform programs</li>
+          <li>CI/CD pipeline delivery</li>
+          <li>Multi-cloud & hybrid architecture</li>
+          <li>Infrastructure automation</li>
+        </ul>
+      </div>
+      <div class="domain-card reveal">
+        <div class="domain-icon">🏗️</div>
+        <div class="domain-name">Construction (BIM/IFC)</div>
+        <ul class="domain-items">
+          <li>IFC-based BIM delivery</li>
+          <li>Digital construction workflows</li>
+          <li>Multi-discipline coordination</li>
+          <li>Model integration platforms</li>
+        </ul>
+      </div>
+      <div class="domain-card reveal">
+        <div class="domain-icon">📡</div>
+        <div class="domain-name">Telecom & System Integration</div>
+        <ul class="domain-items">
+          <li>Service provisioning platforms</li>
+          <li>BSS/OSS system delivery</li>
+          <li>API & system integration</li>
+          <li>Network ops coordination</li>
+        </ul>
+      </div>
+      <div class="domain-card reveal">
+        <div class="domain-icon">🚢</div>
+        <div class="domain-name">Logistics & Trade</div>
+        <ul class="domain-items">
+          <li>Container & shipment tracking</li>
+          <li>Port & customs integration</li>
+          <li>Supply chain platforms</li>
+          <li>Import/export lifecycle systems</li>
+        </ul>
+      </div>
+      <div class="domain-card reveal">
+        <div class="domain-icon">🏢</div>
+        <div class="domain-name">Enterprise Collaboration & ERP</div>
+        <ul class="domain-items">
+          <li>Enterprise workflow platforms</li>
+          <li>Cross-org collaboration tools</li>
+          <li>ERP-adjacent integrations</li>
+          <li>Digital transformation programs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ════════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="sec-label">Career Journey</div>
+    <h2 class="sec-title">Professional <em>Experience</em></h2>
+    <div class="timeline">
+
+      <!-- JOB 1 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot featured"></div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <div class="job-role">Sr. Technical Project Manager</div>
+              <div class="job-company">Globant India Pvt. Ltd.</div>
+            </div>
+            <div class="job-dates">Jan 2022 – Present</div>
+          </div>
+          <div class="job-body">
+            <p>Leading enterprise-scale technical delivery programs across globally distributed teams in Argentina, China, and India — spanning SaaS platform delivery, infrastructure modernisation, Agile transformation, and financial governance with full P&L ownership.</p>
+            <ul class="job-bullets">
+              <li>Directed multi-region engineering programs with annual portfolio ownership exceeding $2.5M across fixed-price and T&M engagement models</li>
+              <li>Led globally distributed teams of 30+ (Dev, QA, DevOps, Support) with 24x7 operations across 3 time zones</li>
+              <li>Delivered $1.2M enterprise digital transformation initiative under budget with 12% margin improvement</li>
+              <li>Reduced delivery costs by 18% through strategic resource optimisation and sprint throughput governance</li>
+              <li>Negotiated SOWs generating $400K+ in incremental revenue through scope expansion and upsell delivery</li>
+              <li>Championed AI-enabled PM tools — reduced sprint reporting and documentation overhead by ~40%</li>
+              <li>Implemented executive KPI dashboards with real-time sprint health, budget burn, and release readiness</li>
+            </ul>
+
+            <!-- STAR 1 -->
+            <div class="star-box">
+              <div class="star-box-title">STAR Example: Subscription-Based Infrastructure Billing & Notification Platform</div>
+              <div class="star-rows">
+                <div class="star-cell">
+                  <div class="star-letter s-s">S</div>
+                  <div class="star-cell-title">Situation</div>
+                  <p>The organisation was managing infrastructure usage and billing through partially manual processes — resulting in billing inaccuracies, delayed invoicing cycles, limited financial visibility, and inconsistent customer notifications impacting client satisfaction and revenue predictability.</p>
+                </div>
+                <div class="star-cell">
+                  <div class="star-letter s-t">T</div>
+                  <div class="star-cell-title">Task</div>
+                  <p>As Sr. TPM, I was accountable for end-to-end delivery of a scalable, cloud-enabled subscription billing and infrastructure usage platform — within a fixed budget across a 6-month timeline — aligning engineering, finance, DevOps, and business stakeholders.</p>
+                </div>
+              </div>
+              <div class="star-rows">
+                <div class="star-cell">
+                  <div class="star-letter s-a">A</div>
+                  <div class="star-cell-title">Actions</div>
+                  <ul>
+                    <li>Defined program roadmap and subscription model architecture (usage-based & tiered pricing)</li>
+                    <li>Directed cross-functional squads for automated usage tracking and billing orchestration</li>
+                    <li>Coordinated multi-channel notifications (email/SMS) for invoices, alerts, and payment reminders</li>
+                    <li>Established CI/CD-enabled release governance and cloud deployment coordination</li>
+                    <li>Built real-time executive dashboards for billing analytics and delivery KPI monitoring</li>
+                  </ul>
+                </div>
+                <div class="star-cell">
+                  <div class="star-letter s-r">R</div>
+                  <div class="star-cell-title">Results</div>
+                  <ul>
+                    <li>Improved billing accuracy by <strong>30%</strong> — eliminating manual reconciliation</li>
+                    <li>Reduced invoice-to-payment cycle time through automated notification workflows</li>
+                    <li>Created a scalable subscription model supporting <strong>3x client growth</strong> post-launch</li>
+                    <li>Delivered on time and within budget — recognised as a flagship delivery achievement</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB 2 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot featured"></div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <div class="job-role">Tech Lead | Scrum Master</div>
+              <div class="job-company">Thomson Reuters (Product-Based Company)</div>
+            </div>
+            <div class="job-dates">Nov 2019 – Jan 2022</div>
+          </div>
+          <div class="job-body">
+            <p>Led Agile engineering delivery for an enterprise SaaS Document Management Platform — overseeing multi-squad coordination, AI-enabled automation, subscription billing, and multi-tenant architecture.</p>
+            <ul class="job-bullets">
+              <li>Guided cross-functional Agile squads through full product delivery lifecycle — roadmap to release</li>
+              <li>Implemented story mapping — reduced sprint spillover by 20% and improved delivery predictability</li>
+              <li>Improved document processing efficiency by 35% through AI-driven classification workflows</li>
+              <li>Coordinated CI/CD pipelines with DevOps enabling faster, reliable cloud-based deployments</li>
+              <li>Directed backlog refinement, KPI tracking, and delivery health reporting in Jira and Azure DevOps</li>
+            </ul>
+
+            <!-- STAR 2 -->
+            <div class="star-box">
+              <div class="star-box-title">STAR Example: Multi-Tenant SaaS Document Management & AI Automation Platform</div>
+              <div class="star-rows">
+                <div class="star-cell">
+                  <div class="star-letter s-s">S</div>
+                  <div class="star-cell-title">Situation</div>
+                  <p>The organisation needed a scalable SaaS platform to manage large-scale document workflows across multiple enterprise clients. Existing processes were heavily manual, lacked standardised automation, and had no subscription billing capability — limiting scalability and onboarding speed.</p>
+                </div>
+                <div class="star-cell">
+                  <div class="star-letter s-t">T</div>
+                  <div class="star-cell-title">Task</div>
+                  <p>As Tech Lead and Scrum Master, I was responsible for end-to-end Agile delivery — including squad coordination, AI automation implementation, multi-tenant SaaS architecture, subscription billing module, and engineering governance across distributed teams.</p>
+                </div>
+              </div>
+              <div class="star-rows">
+                <div class="star-cell">
+                  <div class="star-letter s-a">A</div>
+                  <div class="star-cell-title">Actions</div>
+                  <ul>
+                    <li>Defined Agile delivery roadmap aligned with product strategy and client onboarding requirements</li>
+                    <li>Led AI-enabled document classification, metadata extraction, and intelligent indexing</li>
+                    <li>Directed multi-tenant SaaS architecture with role-based access and subscription billing</li>
+                    <li>Partnered with DevOps to establish containerised CI/CD pipelines (Docker/Kubernetes)</li>
+                    <li>Established governance frameworks, KPI dashboards, and stakeholder demo cycles</li>
+                  </ul>
+                </div>
+                <div class="star-cell">
+                  <div class="star-letter s-r">R</div>
+                  <div class="star-cell-title">Results</div>
+                  <ul>
+                    <li>Improved document processing efficiency by <strong>35%</strong> via AI automation</li>
+                    <li>Reduced classification time from <strong>4+ hours to under 20 minutes</strong></li>
+                    <li>Achieved <strong>99.5%+ uptime</strong> post-launch through robust CI/CD governance</li>
+                    <li>Delivered full scope on time — zero critical defects at go-live</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOB 3 -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <div class="job-role">Team Lead | Scrum Master</div>
+              <div class="job-company">HighQ Solutions Pvt. Ltd.</div>
+            </div>
+            <div class="job-dates">Mar 2015 – Oct 2019</div>
+          </div>
+          <div class="job-body">
+            <ul class="job-bullets">
+              <li>Delivered full-cycle enterprise product implementations from requirements through production using Agile</li>
+              <li>Facilitated sprint ceremonies, backlog prioritisation, and stakeholder demos across multiple product streams</li>
+              <li>Managed user stories, acceptance criteria, and release coordination across 4+ parallel initiatives</li>
+              <li>Mentored junior developers and QA engineers on Scrum adoption and engineering quality standards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- EARLIER ROLES -->
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <div class="job-role">Sr. Software QA Engineer</div>
+              <div class="job-company">Casting Networks (Product-Based)</div>
+            </div>
+            <div class="job-dates">Sep 2014 – Feb 2015</div>
+          </div>
+          <div class="job-body">
+            <ul class="job-bullets">
+              <li>Executed performance testing strategies within Agile sprints — improved test cycle efficiency by 15%</li>
+              <li>Collaborated on QA strategy, test planning, and release quality governance for enterprise platforms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <div class="job-role">Sr. QA Engineer</div>
+              <div class="job-company">Integrated Database Systems</div>
+            </div>
+            <div class="job-dates">Jan 2014 – Aug 2014</div>
+          </div>
+          <div class="job-body">
+            <ul class="job-bullets">
+              <li>Delivered SIT, UAT, regression, and performance testing across enterprise SaaS and legal platforms</li>
+              <li>Led integration testing, security flow validation, and defect management for enterprise services</li>
+              <li>Promoted quality engineering practices and structured validation workflows across delivery teams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+       <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <div class="job-role">QA Engineer</div>
+              <div class="job-company">Asite Solutions Ltd. (Product Based)</div>
+            </div>
+            <div class="job-dates">Jun 2011 – Jan 2014</div>
+          </div>
+          <div class="job-body">
+            <ul class="job-bullets">
+              <li>Delivered SIT cycles, UAT support, and enterprise platform testing; promoted quality engineering practices across delivery teams</li>
+              <li>Led integration testing, security flow validation, and defect management for enterprise services</li>
+              <li>Promoted quality engineering practices and structured validation workflows across delivery teams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+<div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="job-card">
+          <div class="job-header">
+            <div class="job-title-wrap">
+              <div class="job-role">QA Engineer</div>
+              <div class="job-company">HighQ Solutions Ltd. (Product-Based)</div>
+            </div>
+            <div class="job-dates">Aug 2009 – Jun 2011</div>
+          </div>
+          <div class="job-body">
+            <ul class="job-bullets">
+              <li>Performed functional, regression, and manual testing for SaaS and legal enterprise applications across multiple product releases</li>
+              <li>Led integration testing, security flow validation, and defect management for enterprise services</li>
+              <li>Promoted quality engineering practices and structured validation workflows across delivery teams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CERTIFICATIONS ═════════════════════════════════════════════ -->
+<section id="certifications">
+  <div class="section-inner">
+    <div class="sec-label">Credentials</div>
+    <h2 class="sec-title">Certifications &amp; <em>Education</em></h2>
+    <div class="cert-grid reveal">
+      <div class="cert-item">
+        <div class="cert-icon">🏅</div>
+        <div><div class="cert-name">Certified Scrum Master (CSM)</div><div class="cert-org">Scrum Alliance</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">📋</div>
+        <div><div class="cert-name">PRINCE2 Foundation & Practitioner</div><div class="cert-org">AXELOS</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">⚡</div>
+        <div><div class="cert-name">SAFe 5 & 6 Agilist</div><div class="cert-org">Scaled Agile Inc.</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🎯</div>
+        <div><div class="cert-name">Agile Project Management Foundations</div><div class="cert-org">PMI</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">👥</div>
+        <div><div class="cert-name">Management 3.0 Certified</div><div class="cert-org">Management 3.0</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🧠</div>
+        <div><div class="cert-name">CPMAI – Cognitive PM in AI</div><div class="cert-org">PMI</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🤖</div>
+        <div><div class="cert-name">Generative AI Overview for PMs</div><div class="cert-org">PMI</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">💬</div>
+        <div><div class="cert-name">Prompt Engineering for PMs</div><div class="cert-org">PMI</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">☁️</div>
+        <div><div class="cert-name">Cloud 101 Certification</div><div class="cert-org">Cloud Fundamentals</div></div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-icon">🌐</div>
+        <div><div class="cert-name">Google Cloud Leadership</div><div class="cert-org">Udemy</div></div>
+      </div>
+    </div>
+
+<!-- Education — own centred row -->
+<section id="certifications">
+<div class="section-inner">
+ <div class="sec-label">professional</div>
+    <h2 class="sec-title">🎓 Professional  <em>Education</em></h2>
+    <div class="edu-grid reveal">
+      <div class="cert-item edu-item">
+        <div class="cert-icon" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%)">🎓</div>
+        <div><div class="cert-name">Master in Computer Applications</div><div class="cert-org">Gujarat University · 2009</div></div>
+      </div>
+      <div class="cert-item edu-item">
+        <div class="cert-icon" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%)">🎓</div>
+        <div><div class="cert-name">Bachelor in Statistics</div><div class="cert-org">Gujarat University · 2005</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-name">Dhaval Chavda</div>
+    <div class="footer-tagline">Senior Technical Project Manager · Open to Global Opportunities</div>
+    <div class="footer-links">
+      <a href="mailto:dhavalrajput74@email.com">Email</a>
+      <a href="https://linkedin.com/in/dhaval-chavda" target="_blank">LinkedIn</a>
+      <a href="#home">Back to Top ↑</a>
+    </div>
+    <div class="footer-copy">© 2026 Dhaval Chavda · Portfolio · Built with purpose</div>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Smooth active nav
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.getAttribute('id');
+  });
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#'+current
+      ? 'var(--gold2)' : 'rgba(255,255,255,0.7)';
+  });
+});
+</script>
+</body>
+</html>
